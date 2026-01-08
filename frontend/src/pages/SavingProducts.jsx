@@ -1,4 +1,4 @@
-import savingImg from '../assets/saving1-2.png'
+import pic2 from '../assets/PIC2.png'
 
 function SavingProducts() {
   const savingProducts = [
@@ -53,7 +53,7 @@ function SavingProducts() {
 
         {/* Savings Image */}
         <div className="mb-12">
-          <img src={savingImg} alt="Savings Growth" className="w-full max-w-4xl mx-auto rounded-xl shadow-2xl" />
+          <img src={pic2} alt="Savings Services" className="rounded-xl shadow-2xl w-full max-w-4xl mx-auto h-96 object-cover" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -75,9 +75,6 @@ function SavingProducts() {
                   ))}
                 </ul>
               </div>
-              <button className="mt-6 w-full bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition">
-                Open Account
-              </button>
             </div>
           ))}
         </div>

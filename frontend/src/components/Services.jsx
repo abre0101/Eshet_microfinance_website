@@ -16,7 +16,7 @@ function Services() {
         <div className="mb-8">
           <button
             onClick={() => setOpenLoan(!openLoan)}
-            className="w-full bg-blue-600 text-white p-6 rounded-xl shadow-lg hover:bg-blue-700 transition-all flex justify-between items-center"
+            className="w-full bg-emerald-600 text-white p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition-all flex justify-between items-center"
           >
             <div className="flex items-center gap-4">
               <span className="text-4xl">💰</span>

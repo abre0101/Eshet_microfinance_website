@@ -1,3 +1,5 @@
+import pic1 from '../assets/PIC1.png'
+
 function LoanProducts() {
   const loanProducts = [
     {
@@ -61,6 +63,11 @@ function LoanProducts() {
           </p>
         </div>
 
+        {/* Loan Image */}
+        <div className="mb-12">
+          <img src={pic1} alt="Loan Services" className="rounded-xl shadow-2xl w-full max-w-4xl mx-auto h-96 object-cover" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {loanProducts.map((product, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all">
@@ -80,9 +87,6 @@ function LoanProducts() {
                       ))}
                     </ul>
                   </div>
-                  <button className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-                    Apply Now
-                  </button>
                 </div>
               </div>
             </div>
