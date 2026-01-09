@@ -1,5 +1,6 @@
 import chapter1 from '../assets/chapter 1 -react intro.pdf'
 import chapter2 from '../assets/Chapter 2- react component.pdf'
+import heroBg from '../assets/microfinance_pic.jpg'
 
 function Documents() {
   const documents = [
@@ -64,10 +65,13 @@ function Documents() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Documents</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+      <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Documents</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
             Access important documents, reports, and publications from Eshet MFI
           </p>
         </div>

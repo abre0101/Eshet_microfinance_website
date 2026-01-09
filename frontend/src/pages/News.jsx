@@ -1,6 +1,7 @@
 import newsImg from '../assets/news.jpg'
 import aboutUs1 from '../assets/about_us.jpg'
 import aboutUs2 from '../assets/about_us2.jpg'
+import heroBg from '../assets/pic4.jpg'
 
 function News() {
   const newsItems = [
@@ -57,10 +58,13 @@ function News() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">News & Updates</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">News & Updates</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
             Stay updated with the latest news and announcements from Eshet MFI
           </p>
         </div>

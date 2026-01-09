@@ -1,4 +1,5 @@
 import pic1 from '../assets/PIC1.png'
+import heroBg from '../assets/pic4.jpg'
 import { Link } from 'react-router-dom'
 
 function LoanProducts() {
@@ -44,10 +45,13 @@ function LoanProducts() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Loan Products</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+      <div className="relative bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Loan Products</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
             Flexible financing solutions designed to empower your dreams
           </p>
         </div>
