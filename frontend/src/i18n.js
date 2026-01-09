@@ -44,7 +44,7 @@ const resources = {
       businessHours: 'Business Hours',
       businessHoursValue: 'Mon - Fri: 9:00 AM - 5:00 PM',
       copyright: '© 2026 Eshet Microfinance Institution S.C. All rights reserved.',
-      licensed: 'Licensed by the National Bank of Ethiopia | Thank you for being with us',
+      licensed: 'Licensed by the National Bank of Ethiopia | Powered by Abraham Worku',
       privacyPolicy: 'Privacy Policy',
       termsOfService: 'Terms of Service',
       cookiePolicy: 'Cookie Policy',
