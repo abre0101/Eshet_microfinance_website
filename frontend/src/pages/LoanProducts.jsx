@@ -1,44 +1,47 @@
 import pic1 from '../assets/PIC1.png'
 import heroBg from '../assets/pic4.jpg'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function LoanProducts() {
+  const { t } = useTranslation()
+  
   const loanProducts = [
     {
       icon: '🌾',
-      title: 'Rural Agricultural Loan',
-      description: 'Supporting farmers with agricultural financing to improve productivity and income.',
-      features: ['Flexible repayment terms', 'Competitive interest rates', 'Quick approval process', 'Seasonal payment options']
+      title: t('ruralAgriculturalLoan'),
+      description: t('ruralLoanDesc'),
+      features: [t('flexibleRepayment'), t('competitiveRates'), t('quickApproval'), t('seasonalPayment')]
     },
     {
       icon: '👥',
-      title: 'Group Business Loan',
-      description: 'Financing for group business ventures to support collective entrepreneurship.',
-      features: ['Group guarantee system', 'Lower collateral requirements', 'Peer support network', 'Business training included']
+      title: t('groupBusinessLoan'),
+      description: t('groupLoanDesc'),
+      features: [t('groupGuarantee'), t('lowerCollateral'), t('peerSupport'), t('businessTraining')]
     },
     {
       icon: '💼',
-      title: 'Individual Business Loan',
-      description: 'Personal business financing solutions for entrepreneurs and small business owners.',
-      features: ['Tailored loan amounts', 'Flexible terms', 'Business advisory support', 'Fast disbursement']
+      title: t('individualBusinessLoan'),
+      description: t('individualLoanDesc'),
+      features: [t('tailoredLoans'), t('flexibleTerms'), t('businessAdvisory'), t('fastDisbursement')]
     },
     {
       icon: '🏢',
-      title: 'SME Loan',
-      description: 'Comprehensive financing for growing businesses to expand operations.',
-      features: ['Higher loan limits', 'Long-term financing', 'Working capital support', 'Equipment financing']
+      title: t('smeLoan'),
+      description: t('smeLoanDesc'),
+      features: [t('higherLimits'), t('longTermFinancing'), t('workingCapital'), t('equipmentFinancing')]
     },
     {
       icon: '☀️',
-      title: 'Solar Energy Loan',
-      description: 'Group & individual solar energy financing for clean and sustainable energy solutions.',
-      features: ['Affordable solar systems', 'Energy cost savings', 'Environmental impact', 'Technical support']
+      title: t('solarEnergyLoan'),
+      description: t('solarLoanDesc'),
+      features: [t('affordableSolar'), t('energySavings'), t('environmentalImpact'), t('technicalSupport')]
     },
     {
       icon: '👔',
-      title: 'Employee Loan',
-      description: 'Staff salary and employee loans with convenient repayment through payroll deduction.',
-      features: ['Salary-based lending', 'Automatic deduction', 'Quick processing', 'Competitive rates']
+      title: t('employeeLoan'),
+      description: t('employeeLoanDesc'),
+      features: [t('salaryBased'), t('automaticDeduction'), t('quickProcessing'), t('competitiveRates')]
     }
   ]
 
@@ -50,9 +53,9 @@ function LoanProducts() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Loan Products</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('loanProductsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Flexible financing solutions designed to empower your dreams
+            {t('loanProductsSubtitle')}
           </p>
         </div>
       </div>
@@ -78,7 +81,7 @@ function LoanProducts() {
                   <h3 className="text-2xl font-bold mb-3 text-gray-900">{product.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-emerald-600">Key Features:</h4>
+                    <h4 className="font-semibold text-emerald-600">{t('keyFeatures')}</h4>
                     <ul className="space-y-2">
                       {product.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -97,17 +100,17 @@ function LoanProducts() {
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white p-10 rounded-2xl shadow-xl">
           <div className="text-center mb-8">
-            <h3 className="text-4xl font-bold mb-4">Ready to Apply?</h3>
+            <h3 className="text-4xl font-bold mb-4">{t('readyToApply')}</h3>
             <p className="text-xl max-w-2xl mx-auto">
-              Contact us today to learn more about our loan products and start your application process.
+              {t('readyToApplyText')}
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Link to="/#contact" className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center text-lg">
-              Contact Us
+              {t('contactUsBtn')}
             </Link>
             <a href="tel:+251902481762" className="bg-transparent border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition text-center text-lg">
-              Call: +251-9-0248-1762
+              {t('call')}: +251-9-0248-1762
             </a>
           </div>
         </div>

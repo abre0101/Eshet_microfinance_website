@@ -4,8 +4,10 @@ import savingImg from '../assets/saving1-2.png'
 import report1 from '../assets/chapter 1 -react intro.pdf'
 import report2 from '../assets/Chapter 2- react component.pdf'
 import heroBg from '../assets/pic4.jpg'
+import { useTranslation } from 'react-i18next'
 
 function Report() {
+  const { t } = useTranslation()
   const reports = [
     {
       title: 'Annual Report 2023',
@@ -68,9 +70,9 @@ function Report() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Reports & Performance</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('reportsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Transparency and accountability through comprehensive financial reporting
+            {t('reportsSubtitle')}
           </p>
         </div>
       </div>
@@ -78,7 +80,7 @@ function Report() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Performance Metrics */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">Key Performance Indicators</h2>
+          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">{t('keyPerformanceIndicators')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {performanceMetrics.map((metric, index) => (
               <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all border-2 border-indigo-100">
@@ -99,10 +101,10 @@ function Report() {
 
         {/* Performance Charts */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">Performance Overview</h2>
+          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">{t('performanceOverview')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Client Growth</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">{t('clientGrowth')}</h3>
               <img 
                 src={clientsImg} 
                 alt="Client Statistics" 
@@ -111,7 +113,7 @@ function Report() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Loan Disbursement</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">{t('loanDisbursement')}</h3>
               <img 
                 src={disbImg} 
                 alt="Disbursement Statistics" 
@@ -120,7 +122,7 @@ function Report() {
               />
             </div>
             <div className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all">
-              <h3 className="text-xl font-bold mb-4 text-gray-900">Savings Growth</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">{t('savingsGrowth')}</h3>
               <img 
                 src={savingImg} 
                 alt="Savings Statistics" 
@@ -133,7 +135,7 @@ function Report() {
 
         {/* Reports List */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">Available Reports</h2>
+          <h2 className="text-4xl font-bold mb-8 text-gray-900 text-center">{t('availableReports')}</h2>
           <div className="space-y-8">
             {reports.map((report, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all border-2 border-indigo-100">
@@ -161,7 +163,7 @@ function Report() {
                     <p className="text-gray-600 mb-6 leading-relaxed text-lg">{report.description}</p>
                     
                     <div>
-                      <h4 className="font-bold text-gray-900 mb-3 text-lg">Key Highlights:</h4>
+                      <h4 className="font-bold text-gray-900 mb-3 text-lg">{t('keyHighlights')}:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {report.highlights.map((highlight, idx) => (
                           <div key={idx} className="flex items-center gap-3 text-gray-600">
@@ -179,7 +181,7 @@ function Report() {
                       download 
                       className="block w-full bg-indigo-600 text-white px-6 py-4 rounded-lg hover:bg-indigo-700 transition font-bold mb-3 text-center text-lg"
                     >
-                      📥 Download PDF
+                      {t('downloadPDF')}
                     </a>
                     <a 
                       href={report.file} 
@@ -187,7 +189,7 @@ function Report() {
                       rel="noopener noreferrer"
                       className="block w-full bg-gray-100 text-gray-700 px-6 py-4 rounded-lg hover:bg-gray-200 transition font-bold text-center text-lg"
                     >
-                      👁️ View Online
+                      {t('viewOnlineBtn')}
                     </a>
                   </div>
                 </div>
@@ -198,16 +200,16 @@ function Report() {
 
         {/* Contact for Reports */}
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-10 rounded-2xl shadow-xl">
-          <h3 className="text-4xl font-bold mb-4">Need More Information?</h3>
+          <h3 className="text-4xl font-bold mb-4">{t('needMoreInfo')}</h3>
           <p className="text-xl mb-8">
-            For detailed reports or specific information, please contact our finance department.
+            {t('needMoreInfoText')}
           </p>
           <div className="flex flex-col md:flex-row gap-4">
             <a href="mailto:finance@eshetmfi.com" className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition text-center text-lg">
-              📧 Email Finance Team
+              {t('emailFinanceTeam')}
             </a>
             <a href="tel:+251902481762" className="bg-transparent border-2 border-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-indigo-600 transition text-center text-lg">
-              📞 Call: +251-9-0248-1762
+              {t('call')}: +251-9-0248-1762
             </a>
           </div>
         </div>

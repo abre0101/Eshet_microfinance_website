@@ -2,8 +2,10 @@ import newsImg from '../assets/news.jpg'
 import aboutUs1 from '../assets/about_us.jpg'
 import aboutUs2 from '../assets/about_us2.jpg'
 import heroBg from '../assets/pic4.jpg'
+import { useTranslation } from 'react-i18next'
 
 function News() {
+  const { t } = useTranslation()
   const newsItems = [
     {
       title: 'Eshet MFI Expands to New Regions',
@@ -63,9 +65,9 @@ function News() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">News & Updates</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('newsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Stay updated with the latest news and announcements from Eshet MFI
+            {t('newsSubtitle')}
           </p>
         </div>
       </div>
@@ -94,7 +96,7 @@ function News() {
                 <p className="text-gray-600 mb-4 leading-relaxed">{news.excerpt}</p>
                 <p className="text-gray-500 text-sm mb-4">{news.content}</p>
                 <button className="text-blue-600 font-bold hover:text-blue-700 transition flex items-center gap-2">
-                  Read More <span>→</span>
+                  {t('readMore')} <span>→</span>
                 </button>
               </div>
             </div>
@@ -102,18 +104,18 @@ function News() {
         </div>
 
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-10 rounded-2xl shadow-xl text-center">
-          <h3 className="text-4xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+          <h3 className="text-4xl font-bold mb-4">{t('subscribeNewsletter')}</h3>
           <p className="text-xl mb-8">
-            Get the latest news and updates delivered directly to your inbox
+            {t('subscribeText')}
           </p>
           <div className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
             <input 
               type="email" 
-              placeholder="Enter your email address" 
+              placeholder={t('enterEmail')}
               className="flex-1 px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-2 focus:ring-white"
             />
             <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition text-lg">
-              Subscribe
+              {t('subscribe')}
             </button>
           </div>
         </div>

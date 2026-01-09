@@ -1,8 +1,10 @@
 import chapter1 from '../assets/chapter 1 -react intro.pdf'
 import chapter2 from '../assets/Chapter 2- react component.pdf'
 import heroBg from '../assets/microfinance_pic.jpg'
+import { useTranslation } from 'react-i18next'
 
 function Documents() {
+  const { t } = useTranslation()
   const documents = [
     {
       title: 'Chapter 1 - React Introduction',
@@ -70,9 +72,9 @@ function Documents() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Documents</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('documentsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Access important documents, reports, and publications from Eshet MFI
+            {t('documentsSubtitle')}
           </p>
         </div>
       </div>
@@ -108,7 +110,7 @@ function Documents() {
                         : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                     }`}
                   >
-                    {doc.file ? '📥 Download' : '📧 Request Document'}
+                    {doc.file ? `📥 ${t('download')}` : `📧 ${t('requestDocument')}`}
                   </button>
                 </div>
               </div>
@@ -117,16 +119,16 @@ function Documents() {
         </div>
 
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-10 rounded-2xl shadow-xl">
-          <h3 className="text-4xl font-bold mb-4">Need a Specific Document?</h3>
+          <h3 className="text-4xl font-bold mb-4">{t('needSpecificDoc')}</h3>
           <p className="text-xl mb-8">
-            If you can't find the document you're looking for, please contact our customer service team.
+            {t('needSpecificDocText')}
           </p>
           <div className="flex flex-col md:flex-row gap-4">
             <a href="tel:+251902481762" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center text-lg">
-              Call: +251-9-0248-1762
+              {t('call')}: +251-9-0248-1762
             </a>
             <a href="mailto:eshetmfi@gmail.com" className="bg-transparent border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition text-center text-lg">
-              Email Us
+              {t('emailUs')}
             </a>
           </div>
         </div>

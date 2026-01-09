@@ -1,44 +1,47 @@
 import pic2 from '../assets/PIC2.png'
 import heroBg from '../assets/microfinance_pic.jpg'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function SavingProducts() {
+  const { t } = useTranslation()
+  
   const savingProducts = [
     {
       icon: '💰',
-      title: 'Regular Voluntary Saving',
-      description: 'Flexible savings account that allows you to save at your own pace with no minimum balance requirement.',
-      features: ['No minimum balance', 'Flexible deposits', 'Competitive interest rates', 'Easy withdrawals']
+      title: t('regularVoluntarySaving'),
+      description: t('regularSavingDesc'),
+      features: [t('noMinimumBalance'), t('flexibleDeposits'), t('competitiveRates'), t('easyWithdrawals')]
     },
     {
       icon: '🪙',
-      title: 'Coin Box Saving',
-      description: 'Traditional coin box savings program that encourages daily saving habits.',
-      features: ['Daily saving culture', 'Coin collection service', 'Builds saving discipline', 'Community-based']
+      title: t('coinBoxSaving'),
+      description: t('coinBoxDesc'),
+      features: [t('dailySavingCulture'), t('coinCollection'), t('buildsDiscipline'), t('communityBased')]
     },
     {
       icon: '🎓',
-      title: 'Child Education Saving',
-      description: 'Dedicated savings account to help parents plan and save for their children\'s education.',
-      features: ['Education-focused', 'Higher interest rates', 'Long-term planning', 'Goal-based saving']
+      title: t('childEducationSaving'),
+      description: t('childSavingDesc'),
+      features: [t('educationFocused'), t('higherInterest'), t('longTermPlanning'), t('goalBasedSaving')]
     },
     {
       icon: '⏰',
-      title: 'Time Deposit',
-      description: 'Fixed-term deposit account offering attractive interest rates for committed savers.',
-      features: ['Fixed term options', 'Higher interest rates', 'Guaranteed returns', 'Certificate of deposit']
+      title: t('timeDeposit'),
+      description: t('timeDepositDesc'),
+      features: [t('fixedTermOptions'), t('higherInterest'), t('guaranteedReturns'), t('certificateOfDeposit')]
     },
     {
       icon: '📊',
-      title: 'Compulsory Saving',
-      description: 'Mandatory savings for loan clients to build financial resilience and security.',
-      features: ['Loan requirement', 'Builds savings habit', 'Emergency fund', 'Collateral support']
+      title: t('compulsorySaving'),
+      description: t('compulsorySavingDesc'),
+      features: [t('loanRequirement'), t('buildsSavingsHabit'), t('emergencyFund'), t('collateralSupport')]
     },
     {
       icon: '👨‍💼',
-      title: 'Staff Saving',
-      description: 'Exclusive savings program for employees with special benefits and competitive rates.',
-      features: ['Payroll deduction', 'Preferential rates', 'Loan eligibility', 'Retirement planning']
+      title: t('staffSaving'),
+      description: t('staffSavingDesc'),
+      features: [t('payrollDeduction'), t('preferentialRates'), t('loanEligibility'), t('retirementPlanning')]
     }
   ]
 
@@ -50,9 +53,9 @@ function SavingProducts() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Saving Products</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('savingProductsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Build your financial future with secure and flexible savings options
+            {t('savingProductsSubtitle')}
           </p>
         </div>
       </div>
@@ -78,7 +81,7 @@ function SavingProducts() {
               </div>
               <p className="text-gray-600 mb-4 text-center leading-relaxed">{product.description}</p>
               <div className="space-y-2">
-                <h4 className="font-semibold text-blue-600 text-center">Benefits:</h4>
+                <h4 className="font-semibold text-blue-600 text-center">{t('benefits')}</h4>
                 <ul className="space-y-2">
                   {product.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -95,41 +98,41 @@ function SavingProducts() {
         {/* Why Save & CTA Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-10 rounded-2xl shadow-xl">
-            <h3 className="text-3xl font-bold mb-6">Why Save With Us?</h3>
+            <h3 className="text-3xl font-bold mb-6">{t('whySaveWithUs')}</h3>
             <ul className="space-y-4 text-lg">
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>
-                <span>Licensed and regulated by NBE</span>
+                <span>{t('licensedByNBE')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>
-                <span>Competitive interest rates</span>
+                <span>{t('competitiveInterest')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>
-                <span>Secure and confidential</span>
+                <span>{t('secureConfidential')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>
-                <span>Convenient branch locations</span>
+                <span>{t('convenientBranches')}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>
-                <span>Professional customer service</span>
+                <span>{t('professionalService')}</span>
               </li>
             </ul>
           </div>
           <div className="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white p-10 rounded-2xl shadow-xl">
-            <h3 className="text-3xl font-bold mb-6">Start Saving Today!</h3>
+            <h3 className="text-3xl font-bold mb-6">{t('startSavingToday')}</h3>
             <p className="text-lg mb-8">
-              Visit any of our branches or contact us to open your savings account and start building your financial future.
+              {t('startSavingText')}
             </p>
             <div className="space-y-4">
               <Link to="/branch-contacts" className="block bg-white text-emerald-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center text-lg">
-                Find a Branch
+                {t('findBranch')}
               </Link>
               <a href="tel:+251902481762" className="block bg-transparent border-2 border-white px-6 py-4 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition text-center text-lg">
-                Call: +251-9-0248-1762
+                {t('call')}: +251-9-0248-1762
               </a>
             </div>
           </div>

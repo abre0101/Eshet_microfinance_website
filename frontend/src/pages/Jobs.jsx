@@ -1,6 +1,8 @@
 import heroBg from '../assets/microfinance_pic.jpg'
+import { useTranslation } from 'react-i18next'
 
 function Jobs() {
+  const { t } = useTranslation()
   const jobOpenings = [
     {
       title: 'Loan Officer',
@@ -72,9 +74,9 @@ function Jobs() {
           <img src={heroBg} alt="Background" className="w-full h-full object-cover object-center" />
         </div>
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Career Opportunities</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{t('jobsHero')}</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95 drop-shadow-md">
-            Join our team and be part of Ethiopia's leading microfinance institution
+            {t('jobsSubtitle')}
           </p>
         </div>
       </div>
@@ -111,7 +113,7 @@ function Jobs() {
                   <p className="text-gray-600 mb-6 leading-relaxed text-lg">{job.description}</p>
                   
                   <div className="mb-6">
-                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Requirements:</h4>
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg">{t('requirements')}:</h4>
                     <ul className="space-y-3">
                       {job.requirements.map((req, idx) => (
                         <li key={idx} className="flex items-start gap-3 text-gray-600">
@@ -124,16 +126,16 @@ function Jobs() {
                   
                   <p className="text-red-600 font-bold text-lg flex items-center gap-2">
                     <span>⏰</span>
-                    <span>Application Deadline: {job.deadline}</span>
+                    <span>{t('applicationDeadline')}: {job.deadline}</span>
                   </p>
                 </div>
                 
                 <div className="lg:w-56">
                   <button className="w-full bg-emerald-600 text-white px-6 py-4 rounded-lg hover:bg-emerald-700 transition font-bold mb-3 text-lg">
-                    Apply Now
+                    {t('applyNowBtn')}
                   </button>
                   <button className="w-full bg-gray-100 text-gray-700 px-6 py-4 rounded-lg hover:bg-gray-200 transition font-bold text-lg">
-                    Share Job
+                    {t('shareJob')}
                   </button>
                 </div>
               </div>
@@ -144,7 +146,7 @@ function Jobs() {
         {/* Application Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gradient-to-br from-emerald-500 to-emerald-700 text-white p-10 rounded-2xl shadow-xl">
-            <h3 className="text-3xl font-bold mb-6">How to Apply</h3>
+            <h3 className="text-3xl font-bold mb-6">{t('howToApply')}</h3>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start gap-3">
                 <span className="font-bold text-2xl">1.</span>
@@ -166,7 +168,7 @@ function Jobs() {
           </div>
           
           <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-10 rounded-2xl shadow-xl">
-            <h3 className="text-3xl font-bold mb-6">Why Work With Us?</h3>
+            <h3 className="text-3xl font-bold mb-6">{t('whyWorkWithUs')}</h3>
             <ul className="space-y-4 text-lg">
               <li className="flex items-center gap-3">
                 <span className="text-2xl">✓</span>

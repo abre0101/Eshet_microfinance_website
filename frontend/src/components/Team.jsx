@@ -1,38 +1,42 @@
+import { useTranslation } from 'react-i18next'
+
 function Team() {
+  const { t } = useTranslation()
+  
   const teamMembers = [
     {
       name: 'Mr. Furgassa Hirpa Amena',
-      position: 'CEO',
+      position: t('ceo'),
       phone: '+251-9-0248-1762',
       email: 'eshetmfi@gmail.com'
     },
     {
       name: 'Ato Bedesa Umeta',
-      position: 'HR Manager',
+      position: t('hrManager'),
       phone: '+251-11-3206451',
       email: ''
     },
     {
       name: 'Ato Ayinu Aboma',
-      position: 'Operation Manager',
+      position: t('operationManager'),
       phone: '+251913234811',
       email: ''
     },
     {
       name: 'Ato Belamo Gonfa',
-      position: 'Finance Manager',
+      position: t('financeManager'),
       phone: '+251910717855',
       email: ''
     },
     {
       name: 'Ato Tsegaye Fufa',
-      position: 'MIS Manager',
+      position: t('misManager'),
       phone: '+251922000719',
       email: ''
     },
     {
       name: 'Ato Zebanu Abera',
-      position: 'Marketing Manager',
+      position: t('marketingManager'),
       phone: '+251973370087',
       email: ''
     }
@@ -42,9 +46,9 @@ function Team() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Leadership Team</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{t('ourLeadershipTeam')}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Meet the experienced professionals driving our mission forward
+            {t('leadershipSubtitle')}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

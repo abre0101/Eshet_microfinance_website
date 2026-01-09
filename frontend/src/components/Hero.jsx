@@ -1,8 +1,11 @@
 import microfinancePic from '../assets/microfinance_pic.jpg'
 import logo from '../assets/logo.jpg'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function Hero() {
+  const { t } = useTranslation()
+  
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact')
     if (contactSection) {
@@ -23,28 +26,28 @@ function Hero() {
             <img src={logo} alt="Eshet MFI Logo" className="h-40 w-40 object-contain rounded-lg shadow-2xl bg-white/10 backdrop-blur-sm p-2" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Welcome To Eshet Microfinance Institution
+            {t('welcomeMessage')}
           </h1>
           <p className="text-lg md:text-xl mb-6 opacity-95">
-            Providing efficient and transparent financial services to enhance your living status
+            {t('heroSubtitle')}
           </p>
           <div className="flex justify-center mb-8">
             <button onClick={scrollToContact} className="bg-white text-emerald-600 px-8 py-3 rounded-lg font-semibold text-base hover:bg-gray-100 transition shadow-lg">
-              Contact Us
+              {t('contactUsBtn')}
             </button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="stat bg-white/10 backdrop-blur-sm p-4 rounded-xl">
               <h3 className="text-3xl md:text-4xl font-bold mb-1">145</h3>
-              <p className="text-base opacity-90">Total Employees</p>
+              <p className="text-base opacity-90">{t('totalEmployees')}</p>
             </div>
             <div className="stat bg-white/10 backdrop-blur-sm p-4 rounded-xl">
               <h3 className="text-3xl md:text-4xl font-bold mb-1">17</h3>
-              <p className="text-base opacity-90">Branches</p>
+              <p className="text-base opacity-90">{t('branches')}</p>
             </div>
             <div className="stat bg-white/10 backdrop-blur-sm p-4 rounded-xl">
               <h3 className="text-3xl md:text-4xl font-bold mb-1">2000</h3>
-              <p className="text-base opacity-90">Established</p>
+              <p className="text-base opacity-90">{t('established')}</p>
             </div>
           </div>
         </div>

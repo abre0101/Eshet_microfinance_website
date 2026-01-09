@@ -1,14 +1,17 @@
 import pic3 from '../assets/pic3.webp'
 import pic4 from '../assets/pic4.jpg'
+import { useTranslation } from 'react-i18next'
 
 function Gallery() {
+  const { t } = useTranslation()
+  
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Our Impact</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">{t('ourImpact')}</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how Eshet MFI is making a difference in communities across Ethiopia
+            {t('impactSubtitle')}
           </p>
         </div>
         
@@ -22,8 +25,8 @@ function Gallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
               <div className="text-white">
-                <h3 className="text-2xl font-bold mb-2">Empowering Communities</h3>
-                <p className="text-gray-200">Supporting local businesses and entrepreneurs</p>
+                <h3 className="text-2xl font-bold mb-2">{t('empoweringCommunities')}</h3>
+                <p className="text-gray-200">{t('supportingLocal')}</p>
               </div>
             </div>
           </div>
@@ -37,8 +40,8 @@ function Gallery() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
               <div className="text-white">
-                <h3 className="text-2xl font-bold mb-2">Financial Inclusion</h3>
-                <p className="text-gray-200">Bringing banking services to rural areas</p>
+                <h3 className="text-2xl font-bold mb-2">{t('financialInclusion')}</h3>
+                <p className="text-gray-200">{t('bringingBanking')}</p>
               </div>
             </div>
           </div>

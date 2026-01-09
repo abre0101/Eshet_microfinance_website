@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.jpg'
+import { useTranslation } from 'react-i18next'
 
 function Footer() {
+  const { t } = useTranslation()
+  
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white">
       {/* Main Footer Content */}
@@ -14,7 +17,7 @@ function Footer() {
               <h3 className="text-2xl font-bold text-emerald-400">Eshet MFI</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Empowering communities through accessible financial services since 2000. Building a better future together.
+              {t('empoweringCommunities')}. {t('buildingFuture')}.
             </p>
             <div className="flex gap-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 p-3 rounded-full transition-all transform hover:scale-110 hover:rotate-6" title="Facebook">
@@ -49,37 +52,37 @@ function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-6 text-emerald-400 flex items-center gap-2">
               <span>🔗</span>
-              <span>Quick Links</span>
+              <span>{t('quickLinks')}</span>
             </h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Home</span>
+                  <span>{t('home')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>About Us</span>
+                  <span>{t('aboutUs')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/loan-products" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Loan Products</span>
+                  <span>{t('loanProducts')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/saving-products" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Saving Products</span>
+                  <span>{t('savingProducts')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/branch-contacts" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Branch Contacts</span>
+                  <span>{t('branchContacts')}</span>
                 </Link>
               </li>
             </ul>
@@ -89,37 +92,37 @@ function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-6 text-emerald-400 flex items-center gap-2">
               <span>📚</span>
-              <span>Resources</span>
+              <span>{t('resources')}</span>
             </h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/documents" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Documents</span>
+                  <span>{t('documents')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/news" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>News & Updates</span>
+                  <span>{t('newsUpdates')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/report" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Reports</span>
+                  <span>{t('reports')}</span>
                 </Link>
               </li>
               <li>
                 <Link to="/jobs" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Careers</span>
+                  <span>{t('careers')}</span>
                 </Link>
               </li>
               <li>
                 <a href="/#contact" className="text-gray-300 hover:text-emerald-400 transition flex items-center gap-2 group">
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  <span>Contact Us</span>
+                  <span>{t('contactUsBtn')}</span>
                 </a>
               </li>
             </ul>
@@ -129,20 +132,20 @@ function Footer() {
           <div>
             <h4 className="text-xl font-bold mb-6 text-emerald-400 flex items-center gap-2">
               <span>📞</span>
-              <span>Contact Info</span>
+              <span>{t('contactInfo')}</span>
             </h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-emerald-400 text-xl">📍</span>
                 <div>
-                  <p className="font-semibold text-white">Address</p>
-                  <p>Addis Ababa, Ethiopia</p>
+                  <p className="font-semibold text-white">{t('address')}</p>
+                  <p>{t('location')}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-emerald-400 text-xl">📞</span>
                 <div>
-                  <p className="font-semibold text-white">Phone</p>
+                  <p className="font-semibold text-white">{t('phone')}</p>
                   <a href="tel:+251902481762" className="hover:text-emerald-400 transition">
                     +251-9-0248-1762
                   </a>
@@ -151,7 +154,7 @@ function Footer() {
               <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-emerald-400 text-xl">✉️</span>
                 <div>
-                  <p className="font-semibold text-white">Email</p>
+                  <p className="font-semibold text-white">{t('email')}</p>
                   <a href="mailto:eshetmfi@gmail.com" className="hover:text-emerald-400 transition">
                     eshetmfi@gmail.com
                   </a>
@@ -160,8 +163,8 @@ function Footer() {
               <div className="flex items-start gap-3 text-gray-300">
                 <span className="text-emerald-400 text-xl">🕒</span>
                 <div>
-                  <p className="font-semibold text-white">Business Hours</p>
-                  <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+                  <p className="font-semibold text-white">{t('businessHours')}</p>
+                  <p>{t('businessHoursValue')}</p>
                 </div>
               </div>
             </div>
@@ -174,16 +177,16 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-center md:text-left">
-              &copy; 2026 Eshet Microfinance Institution S.C. All rights reserved.
+              {t('copyright')}
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">Cookie Policy</a>
+              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">{t('privacyPolicy')}</a>
+              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">{t('termsOfService')}</a>
+              <a href="#" className="text-gray-400 hover:text-emerald-400 transition">{t('cookiePolicy')}</a>
             </div>
           </div>
           <p className="text-gray-500 text-center mt-4 text-sm">
-            Licensed by the National Bank of Ethiopia | Thank you for being with us 💚
+            {t('licensed')} 💚
           </p>
         </div>
       </div>
