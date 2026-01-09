@@ -62,33 +62,49 @@ function Documents() {
   }
 
   return (
-    <div className="py-20 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">Documents</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-purple-50">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Documents</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
             Access important documents, reports, and publications from Eshet MFI
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {documents.map((doc, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-all">
-              <div className="flex items-start gap-4">
-                <div className="text-5xl">📄</div>
+            <div key={index} className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all border-2 border-purple-100">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-6xl">📄</div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold mb-2 text-gray-900">{doc.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{doc.description}</p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                    <span>📅 {doc.date}</span>
-                    <span>📎 {doc.type}</span>
-                    <span>💾 {doc.size}</span>
+                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">{doc.description}</p>
+                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 flex-wrap">
+                    <span className="flex items-center gap-1">
+                      <span>📅</span>
+                      <span>{doc.date}</span>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span>📎</span>
+                      <span>{doc.type}</span>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <span>💾</span>
+                      <span>{doc.size}</span>
+                    </span>
                   </div>
                   <button 
                     onClick={() => handleDownload(doc)}
-                    className="w-full bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition font-semibold"
+                    className={`w-full px-4 py-3 rounded-lg font-semibold transition ${
+                      doc.file 
+                        ? 'bg-purple-600 text-white hover:bg-purple-700' 
+                        : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                    }`}
                   >
-                    {doc.file ? 'Download' : 'Request Document'}
+                    {doc.file ? '📥 Download' : '📧 Request Document'}
                   </button>
                 </div>
               </div>
@@ -96,16 +112,16 @@ function Documents() {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white p-8 rounded-xl">
-          <h3 className="text-2xl font-bold mb-4">Need a Specific Document?</h3>
-          <p className="text-lg mb-6">
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-10 rounded-2xl shadow-xl">
+          <h3 className="text-4xl font-bold mb-4">Need a Specific Document?</h3>
+          <p className="text-xl mb-8">
             If you can't find the document you're looking for, please contact our customer service team.
           </p>
-          <div className="flex gap-4">
-            <a href="tel:+251902481762" className="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-              Call Us
+          <div className="flex flex-col md:flex-row gap-4">
+            <a href="tel:+251902481762" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center text-lg">
+              Call: +251-9-0248-1762
             </a>
-            <a href="mailto:eshetmfi@gmail.com" className="bg-transparent border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition">
+            <a href="mailto:eshetmfi@gmail.com" className="bg-transparent border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition text-center text-lg">
               Email Us
             </a>
           </div>

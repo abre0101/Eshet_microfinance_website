@@ -3,87 +3,64 @@ import aboutUsImg from '../assets/about_us.jpg'
 
 function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 text-center">About Us</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">About Eshet MFI</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Empowering communities through accessible financial services since 2000
+          </p>
+        </div>
         
         {/* Company Profile with Image */}
-        <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-3xl font-bold mb-6 text-emerald-600">Company Profile</h3>
+        <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <h3 className="text-3xl font-bold mb-6 text-emerald-600">Our Story</h3>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Eshet Microfinance Institution (EMFI) was established in the year 2000 G.c in accordance with the proclamation number 40/96 and registered again by the amended proclamation number 626/2009 issued for licensing and supervision of micro financing Institutions in Ethiopia. The Institution has been secured a business license from the National Bank of Ethiopia and certificate of registration from both Addis Ababa City Administration and Oromia Region of Trade Industry and Tourism Bureau. The initial capital was birr 225,000.00.
+              Eshet Microfinance Institution (EMFI) was established in 2000 with a vision to provide accessible financial services to underserved communities. Licensed by the National Bank of Ethiopia, we've grown from an initial capital of Birr 225,000 to Birr 10 Million.
             </p>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              The establishment of Eshet MFI was initiated by a local NGO, named ERSHA (Enhanced Rural Self Help Association) that had been providing an integrated rural development program including saving and credit as one of its core development intervention strategies. Currently, the number of nominal shareholders has increased to 20 through transfer of shares from the founding shareholders. The paid up capital of Eshet has increased to Birr 10 (Ten) Million as of June 30, 2022.
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Founded by ERSHA (Enhanced Rural Self Help Association), we now serve thousands of clients across Ethiopia with 20 shareholders and a dedicated team of 145 employees.
             </p>
           </div>
-          <div>
+          <div className="order-1 lg:order-2">
             <img 
               src={aboutUsImg} 
               alt="About Eshet MFI" 
               loading="lazy"
-              className="rounded-xl shadow-2xl w-full h-auto max-h-96 object-cover" 
+              className="rounded-2xl shadow-2xl w-full h-auto max-h-96 object-cover" 
             />
           </div>
         </div>
 
         {/* Vision & Mission */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <div className="bg-emerald-50 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-emerald-600">Vision</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-10 rounded-2xl shadow-xl">
+            <div className="text-5xl mb-4">🎯</div>
+            <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+            <p className="text-lg leading-relaxed text-emerald-50">
               Aspiring to be one of the top ten competent and leading MFIs in Ethiopia by the year 2035.
             </p>
           </div>
-          <div className="bg-emerald-50 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-emerald-600">Mission</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              To provide efficient and transparent financial services to low and medium income group of the society; mainly MSMEs, Women, youth and small-holder farmers operating in rural and urban areas to enhance their living status.
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-10 rounded-2xl shadow-xl">
+            <div className="text-5xl mb-4">🚀</div>
+            <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+            <p className="text-lg leading-relaxed text-blue-50">
+              To provide efficient and transparent financial services to low and medium income groups, enhancing their living status.
             </p>
           </div>
         </div>
 
         {/* Core Values */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold mb-8 text-gray-900 text-center">Core Values</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Integrity</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Accountability</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Transparency</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Respect</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Speedy Service</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Dedication</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Impartiality</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Confidentiality</p>
-            </div>
-            <div className="bg-white border-2 border-emerald-200 p-6 rounded-lg text-center hover:shadow-lg transition">
-              <p className="font-semibold text-gray-800">Professionalism</p>
-            </div>
+        <div>
+          <h3 className="text-3xl font-bold mb-8 text-gray-900 text-center">Our Core Values</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {['Integrity', 'Accountability', 'Transparency', 'Respect', 'Speedy Service', 'Dedication', 'Impartiality', 'Confidentiality', 'Professionalism'].map((value, index) => (
+              <div key={index} className="bg-white border-2 border-emerald-200 p-6 rounded-xl text-center hover:shadow-lg hover:border-emerald-400 transition-all">
+                <p className="font-semibold text-gray-800">{value}</p>
+              </div>
+            ))}
           </div>
-        </div>
-
-        {/* Goal */}
-        <div className="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white p-8 rounded-xl">
-          <h3 className="text-2xl font-bold mb-4">Goal</h3>
-          <p className="text-lg leading-relaxed">
-            Providing quality and appropriate products (Services) that best satisfy the need of clients and ensure improvement of their wellbeing.
-          </p>
         </div>
       </div>
     </section>

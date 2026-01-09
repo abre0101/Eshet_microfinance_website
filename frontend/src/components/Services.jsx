@@ -1,118 +1,65 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Services() {
-  const [openLoan, setOpenLoan] = useState(true)
-  const [openSaving, setOpenSaving] = useState(true)
-
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">Products and Services</h2>
-        <p className="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Comprehensive financial solutions tailored to meet your needs
-        </p>
-
-        {/* Loan Products Dropdown */}
-        <div className="mb-8">
-          <button
-            onClick={() => setOpenLoan(!openLoan)}
-            className="w-full bg-emerald-600 text-white p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition-all flex justify-between items-center"
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-4xl">💰</span>
-              <h3 className="text-3xl font-bold">Loan Products</h3>
-            </div>
-            <span className={`text-3xl transform transition-transform ${openLoan ? 'rotate-180' : ''}`}>▼</span>
-          </button>
-          {openLoan && (
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">�</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Rural Agricultural Loan</h4>
-                <p className="text-gray-600">Supporting farmers with agricultural financing</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">👥</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Group Business Loan</h4>
-                <p className="text-gray-600">Financing for group business ventures</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">💼</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Individual Business Loan</h4>
-                <p className="text-gray-600">Personal business financing solutions</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">🏢</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">SME Loan</h4>
-                <p className="text-gray-600">Small and medium enterprise financing</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">☀️</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Solar Energy Loan</h4>
-                <p className="text-gray-600">Group & individual solar energy financing</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
-                <div className="text-4xl mb-3">👔</div>
-                <h4 className="text-xl font-bold mb-2 text-gray-900">Employee Loan</h4>
-                <p className="text-gray-600">Staff salary and employee loans</p>
-              </div>
-            </div>
-          )}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Services</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comprehensive financial solutions designed to empower your future
+          </p>
         </div>
 
-        {/* Saving Products Dropdown */}
-        <div className="mb-8">
-          <button
-            onClick={() => setOpenSaving(!openSaving)}
-            className="w-full bg-purple-600 text-white p-6 rounded-xl shadow-lg hover:bg-purple-700 transition-all flex justify-between items-center"
-          >
-            <div className="flex items-center gap-4">
-              <span className="text-4xl">🏦</span>
-              <h3 className="text-3xl font-bold">Saving Products</h3>
-            </div>
-            <span className={`text-3xl transform transition-transform ${openSaving ? 'rotate-180' : ''}`}>▼</span>
-          </button>
-          {openSaving && (
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">💰</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Regular Voluntary Saving</h4>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">🪙</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Coin Box Saving</h4>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">🎓</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Child Education Saving</h4>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">⏰</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Time Deposit</h4>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">📊</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Compulsory Saving</h4>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all text-center">
-                <div className="text-4xl mb-3">👨‍💼</div>
-                <h4 className="text-lg font-bold mb-2 text-gray-900">Staff Saving</h4>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Digital & Insurance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-8 rounded-xl shadow-xl">
+        {/* Quick Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <Link to="/loan-products" className="group bg-gradient-to-br from-emerald-500 to-emerald-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
+            <div className="text-5xl mb-4">💰</div>
+            <h3 className="text-xl font-bold mb-2">Loan Products</h3>
+            <p className="text-emerald-100 text-sm">Flexible financing options</p>
+          </Link>
+          
+          <Link to="/saving-products" className="group bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all">
+            <div className="text-5xl mb-4">🏦</div>
+            <h3 className="text-xl font-bold mb-2">Saving Products</h3>
+            <p className="text-blue-100 text-sm">Secure your financial future</p>
+          </Link>
+          
+          <div className="group bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer">
             <div className="text-5xl mb-4">💻</div>
-            <h3 className="text-2xl font-bold mb-4">Digital Channel</h3>
-            <p className="text-lg">Core Banking System Service for seamless transactions</p>
+            <h3 className="text-xl font-bold mb-2">Digital Banking</h3>
+            <p className="text-purple-100 text-sm">Modern banking solutions</p>
           </div>
-          <div className="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-8 rounded-xl shadow-xl">
+          
+          <div className="group bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all cursor-pointer">
             <div className="text-5xl mb-4">🛡️</div>
-            <h3 className="text-2xl font-bold mb-4">Micro-insurance</h3>
-            <p className="text-lg">Life insurance credit services with 3% premium for all borrowers</p>
+            <h3 className="text-xl font-bold mb-2">Micro-insurance</h3>
+            <p className="text-orange-100 text-sm">Protection for your loans</p>
+          </div>
+        </div>
+
+        {/* Featured Products */}
+        <div className="bg-gradient-to-br from-gray-50 to-emerald-50 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold mb-6 text-gray-900 text-center">Featured Products</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <div className="text-4xl mb-3">🌾</div>
+              <h4 className="text-lg font-bold mb-2 text-gray-900">Agricultural Loan</h4>
+              <p className="text-gray-600 text-sm mb-4">Supporting farmers with flexible terms</p>
+              <Link to="/loan-products" className="text-emerald-600 font-semibold hover:text-emerald-700">Learn More →</Link>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <div className="text-4xl mb-3">🏢</div>
+              <h4 className="text-lg font-bold mb-2 text-gray-900">SME Financing</h4>
+              <p className="text-gray-600 text-sm mb-4">Grow your business with us</p>
+              <Link to="/loan-products" className="text-emerald-600 font-semibold hover:text-emerald-700">Learn More →</Link>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all">
+              <div className="text-4xl mb-3">🎓</div>
+              <h4 className="text-lg font-bold mb-2 text-gray-900">Education Saving</h4>
+              <p className="text-gray-600 text-sm mb-4">Invest in your child's future</p>
+              <Link to="/saving-products" className="text-emerald-600 font-semibold hover:text-emerald-700">Learn More →</Link>
+            </div>
           </div>
         </div>
       </div>

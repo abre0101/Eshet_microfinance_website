@@ -1,8 +1,7 @@
 import Hero from '../components/Hero'
 import Services from '../components/Services'
-import About from '../components/About'
 import Performance from '../components/Performance'
-import Stats from '../components/Stats'
+import About from '../components/About'
 import Gallery from '../components/Gallery'
 import Team from '../components/Team'
 import Contact from '../components/Contact'
@@ -12,9 +11,8 @@ function Home() {
     <>
       <Hero />
       <Services />
-      <About />
       <Performance />
-      <Stats />
+      <About />
       <Gallery />
       <Team />
       <Contact />

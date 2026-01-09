@@ -55,49 +55,60 @@ function News() {
   ]
 
   return (
-    <div className="py-20 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">News & Updates</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">News & Updates</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
             Stay updated with the latest news and announcements from Eshet MFI
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {newsItems.map((news, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
-              <img src={news.image} alt={news.title} className="w-full h-64 object-cover" />
+            <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all">
+              <img 
+                src={news.image} 
+                alt={news.title} 
+                loading="lazy"
+                className="w-full h-64 object-cover" 
+              />
               <div className="p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold">
                     {news.category}
                   </span>
-                  <p className="text-gray-500 text-sm">📅 {news.date}</p>
+                  <p className="text-gray-500 text-sm flex items-center gap-1">
+                    <span>📅</span>
+                    <span>{news.date}</span>
+                  </p>
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">{news.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{news.excerpt}</p>
                 <p className="text-gray-500 text-sm mb-4">{news.content}</p>
-                <button className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                  Read More →
+                <button className="text-blue-600 font-bold hover:text-blue-700 transition flex items-center gap-2">
+                  Read More <span>→</span>
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 rounded-xl text-center">
-          <h3 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h3>
-          <p className="text-lg mb-6">
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-10 rounded-2xl shadow-xl text-center">
+          <h3 className="text-4xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+          <p className="text-xl mb-8">
             Get the latest news and updates delivered directly to your inbox
           </p>
-          <div className="flex gap-4 max-w-md mx-auto">
+          <div className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
             <input 
               type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900"
+              placeholder="Enter your email address" 
+              className="flex-1 px-6 py-4 rounded-lg text-gray-900 text-lg focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition text-lg">
               Subscribe
             </button>
           </div>

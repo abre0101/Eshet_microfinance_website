@@ -41,41 +41,43 @@ function BranchContacts() {
   }
 
   return (
-    <div className="py-20 bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900">Branch Contacts</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Find contact information for all Eshet MFI branches across Ethiopia. 
-            Visit us or get in touch with your nearest branch.
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-emerald-50">
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Branch Contacts</h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-95">
+            Find your nearest Eshet MFI branch across Ethiopia
           </p>
+        </div>
+      </div>
 
-          {/* Region Filter */}
-          <div className="flex justify-center gap-4 flex-wrap">
-            {regions.map(region => (
-              <button
-                key={region}
-                onClick={() => setSelectedRegion(region)}
-                className={`px-6 py-2 rounded-lg font-semibold transition ${
-                  selectedRegion === region
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {region}
-              </button>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        {/* Region Filter */}
+        <div className="flex justify-center gap-4 flex-wrap mb-12">
+          {regions.map(region => (
+            <button
+              key={region}
+              onClick={() => setSelectedRegion(region)}
+              className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                selectedRegion === region
+                  ? 'bg-emerald-600 text-white shadow-lg scale-105'
+                  : 'bg-white text-gray-700 hover:bg-emerald-50 shadow-md'
+              }`}
+            >
+              {region}
+            </button>
+          ))}
         </div>
 
         {/* Display by Region */}
         {selectedRegion === 'All' ? (
           Object.entries(groupedBranches).map(([region, regionBranches]) => (
             <div key={region} className="mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-blue-600">{region} Area</h2>
-              <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
+              <h2 className="text-3xl font-bold mb-6 text-emerald-600">{region} Area</h2>
+              <div className="bg-white rounded-2xl shadow-xl overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-blue-600 text-white">
+                  <thead className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
                     <tr>
                       <th className="px-6 py-4 text-left">L/No</th>
                       <th className="px-6 py-4 text-left">Branch Name</th>
@@ -88,14 +90,14 @@ function BranchContacts() {
                   </thead>
                   <tbody>
                     {regionBranches.map((branch, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50">
+                      <tr key={index} className="border-b hover:bg-emerald-50 transition-colors">
                         <td className="px-6 py-4">{index + 1}</td>
-                        <td className="px-6 py-4 font-semibold">{branch.branchName}</td>
-                        <td className="px-6 py-4">{branch.region}</td>
-                        <td className="px-6 py-4">{branch.zone}</td>
-                        <td className="px-6 py-4">{branch.city}</td>
-                        <td className="px-6 py-4">{branch.location}</td>
-                        <td className="px-6 py-4 text-blue-600">{branch.tel}</td>
+                        <td className="px-6 py-4 font-semibold text-gray-900">{branch.branchName}</td>
+                        <td className="px-6 py-4 text-gray-700">{branch.region}</td>
+                        <td className="px-6 py-4 text-gray-700">{branch.zone}</td>
+                        <td className="px-6 py-4 text-gray-700">{branch.city}</td>
+                        <td className="px-6 py-4 text-gray-700">{branch.location}</td>
+                        <td className="px-6 py-4 text-emerald-600 font-semibold">{branch.tel}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -137,16 +139,16 @@ function BranchContacts() {
           </div>
         )}
 
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-xl">
-          <h3 className="text-3xl font-bold mb-4">Need Help Finding a Branch?</h3>
-          <p className="text-lg mb-6">
+        <div className="mt-16 bg-gradient-to-r from-emerald-600 to-blue-600 text-white p-10 rounded-2xl shadow-xl">
+          <h3 className="text-4xl font-bold mb-4">Need Help Finding a Branch?</h3>
+          <p className="text-xl mb-8">
             Contact our customer service team and we'll help you find the nearest Eshet MFI branch to your location.
           </p>
-          <div className="flex gap-4">
-            <a href="tel:+251902481762" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+          <div className="flex flex-col md:flex-row gap-4">
+            <a href="tel:+251902481762" className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center text-lg">
               Call: +251-9-0248-1762
             </a>
-            <a href="mailto:eshetmfi@gmail.com" className="bg-transparent border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+            <a href="mailto:eshetmfi@gmail.com" className="bg-transparent border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-emerald-600 transition text-center text-lg">
               Email Us
             </a>
           </div>

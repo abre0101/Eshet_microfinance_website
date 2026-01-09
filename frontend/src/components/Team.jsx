@@ -9,7 +9,7 @@ function Team() {
     {
       name: 'Ato Bedesa Umeta',
       position: 'HR Manager',
-      phone: '+251-11-3206451 / +251911343819',
+      phone: '+251-11-3206451',
       email: ''
     },
     {
@@ -35,36 +35,32 @@ function Team() {
       position: 'Marketing Manager',
       phone: '+251973370087',
       email: ''
-    },
-    {
-      name: 'Ato Tadele Mekonnen',
-      position: 'Designation',
-      phone: '+251911944257',
-      email: 'tadele.henok29@gmail.com'
     }
   ]
 
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">Management Team</h2>
-        <p className="text-xl text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Meet our experienced leadership team
-        </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Leadership Team</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Meet the experienced professionals driving our mission forward
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
-            <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4 text-center">👤</div>
+            <div key={index} className="bg-gradient-to-br from-emerald-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all">
+              <div className="text-6xl mb-4 text-center">👤</div>
               <h3 className="text-xl font-bold mb-2 text-gray-900 text-center">{member.name}</h3>
-              <p className="text-blue-600 font-semibold mb-4 text-center">{member.position}</p>
-              <div className="space-y-2 text-sm text-gray-600">
+              <p className="text-emerald-600 font-semibold mb-6 text-center text-lg">{member.position}</p>
+              <div className="space-y-3 text-sm text-gray-600">
                 <p className="flex items-center gap-2">
-                  <span>📞</span>
+                  <span className="text-emerald-600">📞</span>
                   <span>{member.phone}</span>
                 </p>
                 {member.email && (
                   <p className="flex items-center gap-2">
-                    <span>✉️</span>
+                    <span className="text-emerald-600">✉️</span>
                     <span className="break-all">{member.email}</span>
                   </p>
                 )}
