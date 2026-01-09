@@ -356,7 +356,7 @@ const resources = {
       businessHours: 'የስራ ሰዓት',
       businessHoursValue: 'ሰኞ - አርብ: 9:00 ጠዋት - 5:00 ከሰዓት',
       copyright: '© 2026 እሸት ማይክሮ ፋይናንስ ተቋም. ሁሉም መብቶች የተጠበቁ ናቸው።',
-      licensed: 'በኢትዮጵያ ብሔራዊ ባንክ ፈቃድ የተሰጠው | ከእኛ ጋር ስለሆኑ እናመሰግናለን',
+      licensed: 'በኢትዮጵያ ብሔራዊ ባንክ ፈቃድ የተሰጠው | በአብርሃም ወርቁ የበለፀገ ',
       privacyPolicy: 'የግላዊነት ፖሊሲ',
       termsOfService: 'የአገልግሎት ውል',
       cookiePolicy: 'የኩኪ ፖሊሲ',
